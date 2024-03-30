@@ -20,6 +20,12 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
+    public void AddHealth(float amount)
+    {
+        value += amount;
+        value = Mathf.Clamp(value, 0, _maxValue);
+        DrawHealthBar();
+    }
     public void DealDamage(float damage)
     {
         value -= damage;
